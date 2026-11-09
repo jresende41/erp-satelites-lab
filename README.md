@@ -60,6 +60,22 @@ Os 14 testes cobrem: 16 entregas concorrentes do mesmo evento; rollback antes do
 
 O executor de testes é a referência da contagem. Duração em um computador não representa benchmark de desempenho.
 
+## Mudança de contrato e limite do rollback
+
+A extensão publicada em 09/11 acrescenta **seis testes**, totalizando **20** na suíte atual. Os 14 critérios acima continuam sendo os do módulo de eventos. O ZIP v1 no artigo corresponde ao lançamento original; esta extensão está na versão atual deste repositório.
+
+```bash
+python change_lab.py demo --output evidence/minha-mudanca.json
+```
+
+A simulação expande um contrato fictício, preenche a nova coluna e grava nas duas representações durante a janela de compatibilidade. Voltar a aplicação preserva dois pedidos. O snapshot anterior contém apenas um: reaplicá-lo exigiria recuperar e reconciliar a escrita posterior. Depois de remover o contrato legado, o retorno à aplicação antiga é bloqueado.
+
+- [ADR 003: compatibilidade e recuperação de dados](docs/ADR-003.md).
+- [Roteiro de sessão de 15 minutos](docs/SESSAO-15MIN.md).
+- [Resultado executado](evidence/change-demo.json).
+
+Não executa rollback em sistemas reais, restauração operacional, efeitos externos, canário com tráfego ou medição de RTO/RPO. A troca de versão é uma flag no processo; o snapshot é local e sua diferença é inspecionada, sem restauração automática.
+
 ## Limites que fazem parte da decisão
 
 - É uma simulação local, sem rede, broker real, leases, visibility timeout ou garantias de disponibilidade.

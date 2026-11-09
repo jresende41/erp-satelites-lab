@@ -1,0 +1,11 @@
+{
+  "synthetic": true,
+  "application_rollback_preserved_orders": 2,
+  "writes_not_in_snapshot": [
+    "pedido-002"
+  ],
+  "rollback_after_contract": "Contrato incompatível com a versão solicitada",
+  "rto_measured": false,
+  "rpo_measured": false,
+  "external_effects_reconciled": false
+}
