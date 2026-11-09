@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.runtime/
+*.db
+*.db-*
+evidence/minha-execucao.json
+.env
+.env.*

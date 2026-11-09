@@ -1,0 +1,19 @@
+test_commit_before_ack_survives_new_process (test_lab.ReliabilityTests.test_commit_before_ack_survives_new_process) ... ok
+test_concurrent_duplicates_produce_one_effect (test_lab.ReliabilityTests.test_concurrent_duplicates_produce_one_effect) ... ok
+test_contract_rejects_boolean_version (test_lab.ReliabilityTests.test_contract_rejects_boolean_version) ... ok
+test_demo_reconciles_state_and_effects (test_lab.ReliabilityTests.test_demo_reconciles_state_and_effects) ... ok
+test_event_id_reuse_with_different_payload_is_rejected (test_lab.ReliabilityTests.test_event_id_reuse_with_different_payload_is_rejected) ... ok
+test_failure_before_commit_rolls_back_effect_and_inbox (test_lab.ReliabilityTests.test_failure_before_commit_rolls_back_effect_and_inbox) ... ok
+test_gap_is_retryable_then_recovers (test_lab.ReliabilityTests.test_gap_is_retryable_then_recovers) ... ok
+test_invalid_event_goes_to_dead_letter_after_three_attempts (test_lab.ReliabilityTests.test_invalid_event_goes_to_dead_letter_after_three_attempts) ... ok
+test_new_version_cannot_reopen_cancelled_order (test_lab.ReliabilityTests.test_new_version_cannot_reopen_cancelled_order) ... ok
+test_old_event_cannot_regress_cancelled_order (test_lab.ReliabilityTests.test_old_event_cannot_regress_cancelled_order) ... ok
+test_outbox_is_atomic_with_erp_state (test_lab.ReliabilityTests.test_outbox_is_atomic_with_erp_state) ... ok
+test_relay_failure_creates_duplicate_delivery_not_effect (test_lab.ReliabilityTests.test_relay_failure_creates_duplicate_delivery_not_effect) ... ok
+test_replay_preserves_identity_after_dependency_is_recovered (test_lab.ReliabilityTests.test_replay_preserves_identity_after_dependency_is_recovered) ... ok
+test_same_version_with_divergent_state_is_rejected (test_lab.ReliabilityTests.test_same_version_with_divergent_state_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.104s
+
+OK

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OrderStatusChanged v1 — dados fictícios",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["event_id", "order_id", "version", "status", "schema_version"],
+  "properties": {
+    "event_id": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "order_id": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "version": {"type": "integer", "minimum": 1},
+    "status": {"enum": ["CREATED", "SHIPPED", "CANCELLED"]},
+    "schema_version": {"const": 1}
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "kind": "synthetic_local_lab",
+  "log": [
+    {
+      "delivery": 1,
+      "outcome": "applied"
+    },
+    {
+      "delivery": 2,
+      "outcome": "crash_after_commit_before_ack"
+    },
+    {
+      "delivery": 2,
+      "outcome": "duplicate"
+    },
+    {
+      "delivery": 3,
+      "outcome": "applied"
+    },
+    {
+      "delivery": 4,
+      "outcome": "stale"
+    }
+  ],
+  "final_state": {
+    "orders": [
+      {
+        "order_id": "pedido-demo-001",
+        "version": 3,
+        "status": "CANCELLED"
+      }
+    ],
+    "inbox": [
+      {
+        "consumer": "shipping-v1",
+        "event_id": "evt-001",
+        "fingerprint": "6182b35da1a82f85b307f6d90c488c128b96c83b56f94fb66c25d89df2541b6e",
+        "outcome": "applied"
+      },
+      {
+        "consumer": "shipping-v1",
+        "event_id": "evt-002",
+        "fingerprint": "94a6447114702e6d1c23932fb7ab3a487a572ede52d5d98da6702f41e66fa26a",
+        "outcome": "applied"
+      },
+      {
+        "consumer": "shipping-v1",
+        "event_id": "evt-003",
+        "fingerprint": "5957c39967dfc19c347a001c095f619d8fb22510c7acd6f4ae299a877f0e06ac",
+        "outcome": "applied"
+      },
+      {
+        "consumer": "shipping-v1",
+        "event_id": "evt-late-001",
+        "fingerprint": "b1f4909e8b6bd01f975106cb79fb63463137f42ce6fca5f61467a2cac50ead06",
+        "outcome": "stale"
+      }
+    ],
+    "effects": [
+      {
+        "event_id": "evt-001",
+        "order_id": "pedido-demo-001",
+        "status": "CREATED"
+      },
+      {
+        "event_id": "evt-002",
+        "order_id": "pedido-demo-001",
+        "status": "SHIPPED"
+      },
+      {
+        "event_id": "evt-003",
+        "order_id": "pedido-demo-001",
+        "status": "CANCELLED"
+      }
+    ]
+  },
+  "assertions": {
+    "effects": 3,
+    "final_version": 3,
+    "final_status": "CANCELLED",
+    "replayed_delivery": "duplicate",
+    "late_event": "stale"
+  }
+}
